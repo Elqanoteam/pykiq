@@ -244,6 +244,7 @@ class RedisConnector(Connector):
         queue_name: Union[str, NamedObject],
         values: dict,
         tstamp_key_name: str,
+        ns: Optional[NamedObject],
     ) -> datetime:
         if not self._connection_state or self.__redis_connection is None:
             raise ConnectionError("Not connected")
